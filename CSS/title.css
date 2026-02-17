@@ -1,0 +1,28 @@
+html, body { display: grid }
+body { background: #222 }
+
+.RPS-text {
+	text-align: center;
+	background: linear-gradient(90deg, rgb(225, 21, 21), rgb(214, 126, 106), rgb(255, 89, 0)) -100%/ 200%;
+	/* being excessively careful with compat, 
+	 * though this has been supported unprefixed and 
+	 * in the shorthand across major browsers for a while */
+	-webkit-background-clip: text;
+	        background-clip: text;
+	/* use color, don't use -webkit-text-fill-color anymore, 
+	 * was meant to solve a problem we haven't had in years */
+	color: transparent;
+	font: 9 clamp(2em, 10vw, 10em) exo, sans-serif;
+    font-size: 30px;
+	animation: shimmer 2s linear infinite
+}
+
+@keyframes shimmer { to { background-position: 20% } }
+
+@media (max-width: 480px) {
+ h1{
+	font-size:50px;
+	margin-top: 0px;
+}
+}
+

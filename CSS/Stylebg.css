@@ -1,0 +1,77 @@
+/* ==== BODY LAYOUT ==== */
+body {
+  font-family: sans-serif;
+  background: #222;
+  color: white;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* ==== BACKGROUND ANIMATION WRAPPER ==== */
+#creature-wrapper {
+  position: fixed; /* Fixed so it doesn’t interfere with scroll layout */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  pointer-events: none; /* Prevents clicks being blocked */
+  z-index: 0;
+}
+
+/* ==== ANIMATED BACKGROUND CREATURE ==== */
+#creature {
+  font-size: 0.2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150em;
+  height: 150em;
+  flex-wrap: wrap;
+  pointer-events: none;
+  position: absolute;
+}
+
+#creature div {
+  transform-style: preserve-3d;
+  position: relative;
+  width: 4em;
+  height: 4em;
+  margin: 3em;
+  border-radius: 2em;
+  will-change: transform;
+  mix-blend-mode: plus-lighter; /* Optional blend effect */
+  background: var(--red);
+}
+
+/* ==== CONTENT LAYOUT CONTAINER (SCROLLABLE) ==== */
+.content {
+  position: relative;
+  z-index: 10; /* Ensures it’s on top of background */
+  max-width: 800px;
+  margin: 3em auto;
+  padding: 1em;
+  text-align: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 800px;
+  padding: 1em;
+  margin: 3em auto;
+  box-sizing: border-box;
+}
+
+/* (Optional) Media Query for Smaller Devices */
+@media (max-width: 600px) {
+  .content {
+    padding: 1em;
+    margin: 2em 1em;
+  }
+
+  #creature {
+    font-size: 0.1vh;
+  }
+}

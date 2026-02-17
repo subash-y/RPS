@@ -1,0 +1,18 @@
+
+.final-result {
+  font-weight: bold;
+  color: #ff5050;
+}
+
+.move {
+  color: #ffcccb;
+}
+
+.score {
+  color: #ffffff;
+}
+
+.final-result, .move, .score {
+  font-size: clamp(1rem, 4vw, 1.5em);
+}
+

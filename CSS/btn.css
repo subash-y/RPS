@@ -1,0 +1,103 @@
+/* Button group layout */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  margin-top: 2em;
+}
+
+/* Top buttons: Rock, Paper, Scissor */
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+/* Bottom buttons: Reset + Autoplay in a row */
+.bottom-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+/* Circular button styles (unchanged) */
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(80px, 25vw, 150px);
+  height: clamp(80px, 25vw, 150px);
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  border: 2px solid #cfbcbc;
+}
+
+/* Hover state with subtle glow */
+button:hover,
+button:focus {
+  animation: pulse 0.8s ease-out;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.reset-btn{
+  color: red;
+  font-weight: bold;
+  font-style: italic;
+}
+.autoplay-btn{
+  color: rgb(19, 215, 22);
+  font-weight: bold;
+  font-style: italic;
+}
+
+button {
+  touch-action: manipulation;
+}
+
+/* Pulse animation (glow on hover) */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover, #66ccff);
+  }
+  100% {
+    box-shadow: 0 0 0 2em transparent;
+  }
+}
+
+@media (max-width: 500px) {
+  .top-buttons,
+  .bottom-buttons {
+    flex-direction: row;
+    gap: 1em;
+  }
+
+  .btn-group {
+    gap: 1.5em;
+    padding: 0 1em;
+  }
+}
+
+
+@media (max-width: 480px) {
+ 
+  .top-buttons,
+  .bottom-buttons {
+    flex-direction: row;
+    gap: 1em;
+  }
+
+  .btn-group {
+    gap: 1.5em;
+    padding: 0 1em;
+}
+}
+
